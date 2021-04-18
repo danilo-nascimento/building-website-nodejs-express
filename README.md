@@ -75,3 +75,51 @@ app.listen(port, () => {
 Permite o reúso de códigos html com includes, interpolação entre outras features.
 
 [Link dos template engines disponíveis](https://expressjs.com/en/resources/template-engines.html)
+
+### Middleware
+
+**Sintaxe**
+
+- app.use(callback)
+- app.use(path, callback);
+- app.use([get | post | put | delete | ...](path, callback));
+
+**Habilidades**
+
+- Executar qualquer código
+- Mudar os objetos request e response
+- Finalizar o ciclo request-response normalmente enviado dados ao invocador
+- Invocar o próximo middleware no stack
+
+**Exemplos**
+
+```js
+app.use((req, res, next) => {
+  // Faça algo
+  return next();
+});
+
+// Com rota
+app.use('/feedback', (req, res, next) => {
+  // Faça algo
+  return res.send('Hello, World!');
+});
+```
+
+![](imagens/001.jpg)
+
+**Parâmetros para Routes**
+
+```js
+app.get('/speakers/:speakername', handler);
+
+// Atende: /speakers/rainha
+// Atende: /speakers/chuchu
+
+app.get('/speakers/:speakername?', handler);
+
+// Atende: /speakers/
+// Atende: /speakers/chuchu
+```
+
+![](imagens/002.jpg)
