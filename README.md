@@ -123,3 +123,15 @@ app.get('/speakers/:speakername?', handler);
 ```
 
 ![](imagens/002.jpg)
+
+### Router
+
+- Para utilizar, crie um diretório routes com os arquivos respectivos para cada rota
+- Crie um index.js no diretório para tratar cada rota
+
+**Exemplo**
+
+```js
+const router = express.Router();
+router.<verb>(<path:URI>, <callback>)
+```

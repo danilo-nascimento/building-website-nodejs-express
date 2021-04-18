@@ -21,10 +21,6 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 app.use('/', routes());
 
-app.get('/speakers', (req, res) => {
-  res.sendFile(path.join(__dirname, '/static/speakers.html'));
-});
-
 app.listen(port, () => {
   console.log(`Ouvindo na porta ${port}!`);
 });
