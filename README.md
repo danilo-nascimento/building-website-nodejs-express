@@ -20,21 +20,21 @@ Everything else will be discussed in my course.
 ## Uso básico
 
 ```js
-const express = require("express");
+const express = require('express');
 
-const path = require("path");
+const path = require('path');
 
 const app = express();
 const port = 3000;
 
-app.use(express.static(path.join(__dirname, "static")));
+app.use(express.static(path.join(__dirname, 'static')));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/static/index.html"));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/static/index.html'));
 });
 
-app.get("/speakers", (req, res) => {
-  res.sendFile(path.join(__dirname, "/static/speakers.html"));
+app.get('/speakers', (req, res) => {
+  res.sendFile(path.join(__dirname, '/static/speakers.html'));
 });
 
 app.listen(port, () => {
@@ -63,3 +63,15 @@ app.listen(port, () => {
    		"source.fixAll": true
    	}
    ```
+
+### Configuração do Code spell checker
+
+1. Instale a extensão code spell checker
+2. Instale a versão em português Portuguese code spell checker
+3. Adicione nas configurações do Code spell checker o português como idioma válido
+
+### Template Engines
+
+Permite o reúso de códigos html com includes, interpolação entre outras features.
+
+[Link dos template engines disponíveis](https://expressjs.com/en/resources/template-engines.html)

@@ -8,6 +8,9 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './views'));
+
 /**
  * @link https://expressjs.com/pt-br/api.html#express.static
  */
@@ -15,7 +18,8 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/static/index.html'));
+  res.render('pages/index', { pageTitle: 'Welcome' });
+  // res.sendFile(path.join(__dirname, '/static/index.html'));
 });
 
 app.get('/speakers', (req, res) => {
