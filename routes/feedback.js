@@ -2,8 +2,12 @@ const express = require('express');
 
 const router = express.Router();
 
-module.exports = () => {
-  router.get('/', (req, res) => res.send('GET Feedback'));
+module.exports = (params) => {
+  router.get('/', async (req, res) => {
+    const { feedbackService } = params;
+    const feedback = await feedbackService.getList();
+    res.json(feedback);
+  });
 
   router.post('/', (req, res) => res.send('POST Feedback'));
 
