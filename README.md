@@ -137,3 +137,27 @@ app.get('/speakers/:speakername?', handler);
 const router = express.Router();
 router.<verb>(<path:URI>, <callback>)
 ```
+
+### Session Middleware
+
+**Utilizar com criptografia para evitar que o usuário possa manipular o cookie ou session**
+
+**Exemplo**
+
+```js
+const cookieSession = require('cookie-session');
+
+app.set('trust proxy', 1); // Necessário para o deploy
+
+app.use(
+  cookieSession({
+    name: 'session',
+    keys: ['key1', 'key2'],
+  })
+);
+```
+
+- Instale o package cookie-session
+- [Documentação do package cookie-session](https://github.com/expressjs/cookie-session#readme)
+- É possível adicionar dados à sessão via objeto request: request.session.foo = 'bar'
+- [Documentação do uso do cookie-session do Express](https://expressjs.com/en/resources/middleware/cookie-session.html)
