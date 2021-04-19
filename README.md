@@ -128,6 +128,7 @@ app.get('/speakers/:speakername?', handler);
 
 - Para utilizar, crie um diretório routes com os arquivos respectivos para cada rota
 - Crie um index.js no diretório para tratar cada rota
+- No arquivo do servidor, adicione o index da rota
 
 **Exemplo**
 
