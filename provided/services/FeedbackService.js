@@ -32,7 +32,9 @@ class FeedbackService {
    */
   async addEntry(name, email, title, message) {
     const data = (await this.getData()) || [];
-    data.unshift({ name, email, title, message });
+    data.unshift({
+      name, email, title, message,
+    });
     return writeFile(this.datafile, JSON.stringify(data));
   }
 

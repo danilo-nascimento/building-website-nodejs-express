@@ -50,7 +50,7 @@ app.listen(port, () => {
    - eslint-config-prettier
    - eslint-plugin-prettier
 2. Configurar o arquivo .eslintrc
-   1. Adicionar ao extends e plugins o prettier
+   1. Adicionar ao extends e plugins o prettier - Não funcionou
 3. Configurar o arquivo .prettierrc
 4. Caso não tenha no VS Code - O plugin ESlint
 5. Caso não tenha no VS Code - O plugin Prettier
